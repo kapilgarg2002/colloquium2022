@@ -1,0 +1,10 @@
+
+a i{
+    /* height: 130px; */
+    width: 30px;
+    transition: all 0.3s linear;
+
+}
+a:hover i{
+    transform: scale(1.4);
+}
