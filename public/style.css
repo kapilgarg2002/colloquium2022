@@ -85,7 +85,6 @@ ul {
   color: rgb(250, 249, 248);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  z-index: 1000;
 }
 
 .navmenu ul li a:hover span {
