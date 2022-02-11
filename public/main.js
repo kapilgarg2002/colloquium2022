@@ -32,7 +32,7 @@ allnavitems.forEach((item, i) => {
 
     //add class to the item on which mouse is hovering
     this.firstChild.classList.remove("slide-out");
-
+ 
     //add animation class to bottom items
     for(var k=i+1; k < allnavitems.length; k++){
       allnavitems[k].firstChild.classList.remove("slide-out-bottom");
@@ -40,3 +40,16 @@ allnavitems.forEach((item, i) => {
   });
 });
 
+document.addEventListener('scroll', function(){
+
+  var h = document.documentElement, 
+      b = document.body,
+      st = 'scrollTop',
+      sh = 'scrollHeight';
+
+  var percent = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+
+ let value=100-percent;
+  document.querySelector(".scroll-effect").style.left= "-" + value + "%";
+
+});
