@@ -50,6 +50,6 @@ document.addEventListener('scroll', function(){
   var percent = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
 
  let value=100-percent;
-  document.querySelector(".scroll-effect").style.left= "-" + value + "%";
+  document.querySelector(".scroll-effect").style.right= "-" + value + "%";
 
 });

@@ -608,11 +608,11 @@ section {
 /* progress-bar */
 
 .scroll-effect{
-  background-color: blue;
-  width: 100%;
-  height: 3px;
+  background-color: #fff;
+  width: 7px;
+  height: 100%;
   position: fixed;
   z-index: 10000;
-  top: 77px;
-  left: -100%;
+  top: -100%;
+  right: 0;
 }
