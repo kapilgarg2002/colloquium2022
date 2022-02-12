@@ -38,7 +38,7 @@ ul {
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
-  z-index: 2;
+  z-index: 100;
 }
 
 .navmenu ul {
@@ -607,7 +607,7 @@ section {
 
 /* progress-bar */
 
-.scroll-effect{
+.scroll-effect {
   background-color: #fff;
   width: 7px;
   height: 100%;
