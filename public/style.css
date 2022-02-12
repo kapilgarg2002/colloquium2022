@@ -590,7 +590,7 @@ section {
 }
 /* scrollbar */
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 0px;
 }
 
 ::-webkit-scrollbar-track {
@@ -603,4 +603,16 @@ section {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+/* progress-bar */
+
+.scroll-effect{
+  background-color: #fff;
+  width: 7px;
+  height: 100%;
+  position: fixed;
+  z-index: 10000;
+  top: -100%;
+  right: 0;
 }
