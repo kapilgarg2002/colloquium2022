@@ -68,128 +68,128 @@ app.get("/",function(req,res){
   res.sendFile(__dirname+"/index.html");
 });
 
-app.get("/prophylaxis",function(req,res){
-    res.sendFile(__dirname+"/prophy.html");
-});
+// app.get("/prophylaxis",function(req,res){
+//     res.sendFile(__dirname+"/prophy.html");
+// });
 
-app.get("/conquest" ,function(req,res){
-    res.sendFile(__dirname+"/code.html");
-});
-app.get("/clueless",function(req,res){
-    res.sendFile(__dirname+"/clueless.html");
-});
-app.get("/registered",function(req,res){
-  res.sendFile(__dirname+"/registered/index.html")
-})
+// app.get("/conquest" ,function(req,res){
+//     res.sendFile(__dirname+"/code.html");
+// });
+// app.get("/clueless",function(req,res){
+//     res.sendFile(__dirname+"/clueless.html");
+// });
+// app.get("/registered",function(req,res){
+//   res.sendFile(__dirname+"/registered/index.html")
+// })
 
 
-app.post("/prophylaxis",function(req,res){
-  const teamMember1 = {
-    name:req.body.teamMember1Name,
-    phone:req.body.teamMember1Phone,
-    email:req.body.teamMember1Email
-  };
-  const teamMember2 = {
-    name:req.body.teamMember2Name,
-    phone:req.body.teamMember2Phone,
-    email:req.body.teamMember2Email
-  };  
-  const teamMember3 = {
-    name:req.body.teamMember3Name,
-    phone:req.body.teamMember3Phone,
-    email:req.body.teamMember3Email
-  };
-  const tempUser=new debug({
-    teamName:req.body.teamName,
-    password:req.body.password,
-    teamMember1:teamMember1,
-    teamMember2:teamMember2,
-    teamMember3:teamMember3,
-    collegeName:req.body.college,
-    answer1:false,
-    answer2:false,
-    answer3:false
-  });
-  debug.findOne({teamName:req.body.teamName},(err,result)=>
-  {
-    if(!err)
-    {
-      if(result)
-      {
-        res.send("Early Bird Catches the Worm!!<br><h1>Naya Team Name Socho</h1>");
-      }
-      else
-      {
-        tempUser.save(function(err){
-          if(!err){
-            res.redirect('/registered');
-          }
-        });
-      }
-    }
-    else
-    {
-      res.send("Error-Page");
-    }
-  })
-});
+// app.post("/prophylaxis",function(req,res){
+//   const teamMember1 = {
+//     name:req.body.teamMember1Name,
+//     phone:req.body.teamMember1Phone,
+//     email:req.body.teamMember1Email
+//   };
+//   const teamMember2 = {
+//     name:req.body.teamMember2Name,
+//     phone:req.body.teamMember2Phone,
+//     email:req.body.teamMember2Email
+//   };  
+//   const teamMember3 = {
+//     name:req.body.teamMember3Name,
+//     phone:req.body.teamMember3Phone,
+//     email:req.body.teamMember3Email
+//   };
+//   const tempUser=new debug({
+//     teamName:req.body.teamName,
+//     password:req.body.password,
+//     teamMember1:teamMember1,
+//     teamMember2:teamMember2,
+//     teamMember3:teamMember3,
+//     collegeName:req.body.college,
+//     answer1:false,
+//     answer2:false,
+//     answer3:false
+//   });
+//   debug.findOne({teamName:req.body.teamName},(err,result)=>
+//   {
+//     if(!err)
+//     {
+//       if(result)
+//       {
+//         res.send("Early Bird Catches the Worm!!<br><h1>Naya Team Name Socho</h1>");
+//       }
+//       else
+//       {
+//         tempUser.save(function(err){
+//           if(!err){
+//             res.redirect('/registered');
+//           }
+//         });
+//       }
+//     }
+//     else
+//     {
+//       res.send("Error-Page");
+//     }
+//   })
+// });
 
-app.post("/conquest",function(req,res){
-    const teamMember = {
-    name:req.body.teamMemberName,
-    phone:req.body.teamMemberPhone,
-    email:req.body.teamMemberEmail
-  };
-  const tempUser=new code({
-    teamMember:teamMember,
-    college:req.body.college,
-  });
-  tempUser.save(function(err){
-    if(!err){
-      res.redirect('/registered');
-    }
-  });
+// app.post("/conquest",function(req,res){
+//     const teamMember = {
+//     name:req.body.teamMemberName,
+//     phone:req.body.teamMemberPhone,
+//     email:req.body.teamMemberEmail
+//   };
+//   const tempUser=new code({
+//     teamMember:teamMember,
+//     college:req.body.college,
+//   });
+//   tempUser.save(function(err){
+//     if(!err){
+//       res.redirect('/registered');
+//     }
+//   });
 
-});
+// });
 
-app.post("/clueless",function(req,res){
-   const teamMember1 = {
-    name:req.body.teamMember1Name,
-    phone:req.body.teamMember1Phone,
-    email:req.body.teamMember1Email
-  };
-  const teamMember2 = {
-    name:req.body.teamMember2Name,
-    phone:req.body.teamMember2Phone,
-    email:req.body.teamMember2Email
-  };  
+// app.post("/clueless",function(req,res){
+//    const teamMember1 = {
+//     name:req.body.teamMember1Name,
+//     phone:req.body.teamMember1Phone,
+//     email:req.body.teamMember1Email
+//   };
+//   const teamMember2 = {
+//     name:req.body.teamMember2Name,
+//     phone:req.body.teamMember2Phone,
+//     email:req.body.teamMember2Email
+//   };  
   
-  const teamMember3 = {
-    name:req.body.teamMember3Name,
-    phone:req.body.teamMember3Phone,
-    email:req.body.teamMember3Email
-  };
-  const teamMember4 = {
-    name:req.body.teamMember4Name,
-    phone:req.body.teamMember4Phone,
-    email:req.body.teamMember4Email
-  };
+//   const teamMember3 = {
+//     name:req.body.teamMember3Name,
+//     phone:req.body.teamMember3Phone,
+//     email:req.body.teamMember3Email
+//   };
+//   const teamMember4 = {
+//     name:req.body.teamMember4Name,
+//     phone:req.body.teamMember4Phone,
+//     email:req.body.teamMember4Email
+//   };
   
-  const tempUser1=new clueless({
-    teamName: req.body.teamName,
-    teamMember1: teamMember1,
-    teamMember2: teamMember2,
-    teamMember3: teamMember3,
-    teamMember4: teamMember4,
-    college: req.body.college,
+//   const tempUser1=new clueless({
+//     teamName: req.body.teamName,
+//     teamMember1: teamMember1,
+//     teamMember2: teamMember2,
+//     teamMember3: teamMember3,
+//     teamMember4: teamMember4,
+//     college: req.body.college,
     
-  })
-  tempUser1.save(function(err){
-    if(!err){
-      res.redirect('/registered');
-    }
-  });
-})
+//   })
+//   tempUser1.save(function(err){
+//     if(!err){
+//       res.redirect('/registered');
+//     }
+//   });
+// })
 
 app.listen(process.env.PORT||3000, function(){
     console.log("server started at port 3000");
